@@ -1,17 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
 
-const Main = styled.div`
-  font-size: 60px;
-  min-height: 100vh;
-`;
+import { Route, Routes } from "react-router-dom";
 
-export const App = () => {
-  return <Main>
+import * as S from "./components";
+
+export const App: React.FC = () => (
+  <S.Main>
+    <S.Header>
+      <div>UpTrader Tracker</div>
+    </S.Header>
+
     <Routes>
-      <Route path={'/'} element={<div>projects</div>} />
-      <Route path={'/tasks'} element={<div>tasks</div>} />
+      <Route path="/" element={<div>projects</div>} />
+      <Route path="/tasks" element={<div>tasks</div>} />
     </Routes>
-  </Main>;
-};
+  </S.Main>
+);

@@ -1,11 +1,14 @@
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { GlobalStyle } from '@/shared/styles';
-import { App } from '@/pages';
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-render(
+import { App } from "@/pages";
+import { GlobalStyle } from "@/shared/styles";
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <BrowserRouter>
     <App />
     <GlobalStyle />
-  </BrowserRouter>
-  , document.getElementById('root'));
+  </BrowserRouter>,
+);
